@@ -17,7 +17,7 @@ async function getPokemonByName(name) {
     `SELECT * FROM pokemon WHERE name ILIKE '%' || $1 || '%'`,
     [name]
   );
-  return pokemon.rows[0];
+  return pokemon.rows;
 }
 
 async function getPokemonBySearch(search) {

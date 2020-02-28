@@ -8,12 +8,14 @@ const {
   savePokemon,
   deletePokemon,
   updatePokemon,
-  patchPokemon
+  patchPokemon,
+  getAllPokemonByName
 } = require("../models/pokemon.js");
 
 router.get("/pokemon", async (req, res) => {
   const { name, id, search } = req.query;
   if (name) {
+    console.log(name);
     const namedPokemon = await getPokemonByName(name);
     res.json(namedPokemon);
     return;
