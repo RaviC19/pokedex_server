@@ -1,0 +1,34 @@
+{
+  "name": "pokedex-ravic19",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^7.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r dotenv/config ../Back_end/app.js",
+    "dev": "nodemon -r dotenv/config ../Back_end/app.js",
+    "db:createTable": "node -r dotenv/config ./db/scripts/create_table.js",
+    "db:populate": "node -r dotenv/config ./db/scripts/uploadPokemon.js",
+    "db:dropTable": "node -r dotenv/config ./db/scripts/dropTable.js",
+    "db:reset": "npm run db:dropTable && npm run db:createTable && npm run db:populate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SchoolOfCode/pokedex-RaviC19.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SchoolOfCode/pokedex-RaviC19/issues"
+  },
+  "homepage": "https://github.com/SchoolOfCode/pokedex-RaviC19#readme"
+}
